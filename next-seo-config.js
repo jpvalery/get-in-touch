@@ -1,6 +1,5 @@
 const title = "Get in touch with Jp";
-const description =
-  "Let's chat. But first, fill this form for me will ya?";
+const description = "Let's chat. But first, fill this form for me will ya?";
 
 const SEO = {
   title,

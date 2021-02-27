@@ -2,16 +2,30 @@ import NextLink from "next/link";
 
 export default function Home() {
   return (
-      <main>
-      <h1 className="font-serif font-bold text-5xl py-8">
-        Get in touch
-      </h1>
+    <main>
+      <h1 className="font-serif font-bold text-5xl py-8">Get in touch</h1>
       <div className="prose prose-xl text-gray-200 max-w-4xl pb-8">
-        <p>I'm gonna be real. I can't pursue every opportunity that comes my way and have to be extremely picky.</p>
-        <p>It's hard but that's the only way I can keep a sane bandwidth <em>and</em> keep shipping quality work.</p>
-        <p>The more information you can give me about why we should work / play / get together — and why it will be fun / exciting / challenging / rewarding / life-changing — the more likely I’ll be to get on board.</p>
-        <p>Share as much detail with as much honesty as possible and let me know why you feel we would work well together.</p>
-        <p>In return, I <u>promise</u> I'll get back to you in a timely manner and offer some alternatives if I can't help you.</p>
+        <p>
+          I'm gonna be real. I can't pursue every opportunity that comes my way
+          and have to be extremely picky.
+        </p>
+        <p>
+          It's hard but that's the only way I can keep a sane bandwidth{" "}
+          <em>and</em> keep shipping quality work.
+        </p>
+        <p>
+          The more information you can give me about why we should work / play /
+          get together — and why it will be fun / exciting / challenging /
+          rewarding / life-changing — the more likely I’ll be to get on board.
+        </p>
+        <p>
+          Share as much detail with as much honesty as possible and let me know
+          why you feel we would work well together.
+        </p>
+        <p>
+          In return, I <u>promise</u> I'll get back to you in a timely manner
+          and offer some alternatives if I can't help you.
+        </p>
         <p>Sounds good?</p>
       </div>
       <NextLink href="/generic">
@@ -34,7 +48,6 @@ export default function Home() {
           </svg>
         </button>
       </NextLink>
-
-      </main>
+    </main>
   );
 }
