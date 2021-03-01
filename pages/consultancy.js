@@ -15,7 +15,7 @@ export default function Generic() {
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = async (data) => {
-    const res = await fetch("/api/send", {
+    const res = await fetch("/api/send-consultancy", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -29,7 +29,17 @@ export default function Generic() {
 
   return (
     <main className="max-w-3xl mx-auto">
-      <h1 className="font-serif font-bold text-5xl py-12">Get in touch</h1>
+      <h1 className="font-serif font-bold text-5xl py-12">
+        Hire me as a consultant
+      </h1>
+      <div className="prose text-gray-200 pb-12">
+        <p>I'm currently available for projects.</p>
+        <p>
+          The more details you give me, the faster we can get this show on the
+          road.
+        </p>
+        <p>Please fill out the form below and let's get started. </p>
+      </div>
       <form className="grid gap-10" onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label for="name" className="block text-sm font-medium text-gray-50">
@@ -65,11 +75,66 @@ export default function Generic() {
         </div>
 
         <div>
+          <label for="role" className="block text-sm font-medium text-gray-50">
+            What's your role?
+          </label>
+          <div className="mt-1">
+            <input
+              type="text"
+              name="role"
+              id="role"
+              className="text-gray-900 shadow-sm focus:ring-form-500 focus:border-form-500 block w-full sm:text-sm border-gray-300 rounded-md"
+              placeholder="Your job title"
+              aria-describedby="email-description"
+              ref={register({ required: true, maxLength: 80 })}
+            />
+          </div>
+        </div>
+
+        <div>
+          <label
+            for="company"
+            className="block text-sm font-medium text-gray-50"
+          >
+            What's your company?
+          </label>
+          <div className="mt-1">
+            <input
+              type="text"
+              placeholder="Dunder Mifflin Inc."
+              name="company"
+              id="company"
+              className="text-gray-900 shadow-sm focus:ring-form-500 focus:border-form-500 block w-full sm:text-sm border-gray-300 rounded-md"
+              ref={register({ required: true, min: 2, maxLength: 80 })}
+            />
+          </div>
+        </div>
+
+        <div>
+          <label
+            for="website"
+            className="block text-sm font-medium text-gray-50"
+          >
+            What's your website?
+          </label>
+          <div className="mt-1">
+            <input
+              type="text"
+              placeholder="dundermifflin.com"
+              name="website"
+              id="website"
+              className="text-gray-900 shadow-sm focus:ring-form-500 focus:border-form-500 block w-full sm:text-sm border-gray-300 rounded-md"
+              ref={register({ required: true, min: 2, maxLength: 80 })}
+            />
+          </div>
+        </div>
+
+        <div>
           <label
             for="reason"
             className="block text-sm font-medium text-gray-50"
           >
-            What can I help you with?
+            What do you need my help with?
           </label>
           <select
             id="reason"
@@ -77,11 +142,22 @@ export default function Generic() {
             className="text-gray-900 mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-form-500 focus:border-form-500 sm:text-sm rounded-md"
             ref={register}
           >
-            <option value="say-hi" selected>
-              You just wanna say hi
+            <option value="pick-one" disabled selected>
+              Pick one
             </option>
             <option value="services">You're interested in my services</option>
-            <option value="photo">You'd like to talk photography</option>
+            <option value="scoped-project">
+              You already have a scoped project
+            </option>
+            <option value="integration">
+              You need an expert in integration
+            </option>
+            <option value="automation">
+              You want to automate your processes
+            </option>
+            <option value="instrumentation">
+              You want to measure and instrument your product
+            </option>
             <option value="other">Something else</option>
           </select>
         </div>
@@ -102,6 +178,25 @@ export default function Generic() {
               className="text-gray-900 w-full shadow-sm focus:ring-form-500 focus:border-form-500 block border-gray-300 rounded-md"
               aria-describedby="message"
               ref={register({ required: true, maxLength: 80 })}
+            />
+          </div>
+        </div>
+
+        <div>
+          <label
+            for="budget"
+            className="block text-sm font-medium text-gray-50"
+          >
+            What's your budget?
+          </label>
+          <div className="mt-1">
+            <input
+              type="text"
+              placeholder="1,000 CAD"
+              name="budget"
+              id="budget"
+              className="text-gray-900 shadow-sm focus:ring-form-500 focus:border-form-500 block w-full sm:text-sm border-gray-300 rounded-md"
+              ref={register({ required: true, min: 2, maxLength: 80 })}
             />
           </div>
         </div>
@@ -128,7 +223,7 @@ export default function Generic() {
           type="submit"
           className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-cta-600 hover:bg-cta-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cta-500 mr-auto ml-0"
         >
-          Let's do this
+          Send your request
           <svg
             class="ml-3 -mr-1 h-5 w-5"
             xmlns="http://www.w3.org/2000/svg"

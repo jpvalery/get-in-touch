@@ -15,7 +15,7 @@ export default function Generic() {
   const { register, handleSubmit, errors } = useForm();
 
   const onSubmit = async (data) => {
-    const res = await fetch("/api/send", {
+    const res = await fetch("/api/send-photo", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -29,7 +29,20 @@ export default function Generic() {
 
   return (
     <main className="max-w-3xl mx-auto">
-      <h1 className="font-serif font-bold text-5xl py-12">Get in touch</h1>
+      <h1 className="font-serif font-bold text-5xl py-12">
+        Get in touch about photography
+      </h1>
+      <div className="prose text-gray-200 pb-12">
+        <p>
+          I'm available for editorial, commercial, and documentary projects.
+        </p>
+        <p>
+          While I'm currently favoring more in-depth editorial and documentary
+          projects, I'm happy to discuss other projects if they match my vision
+          or move me.
+        </p>
+        <p>Please fill out the form below and let's get started. </p>
+      </div>
       <form className="grid gap-10" onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label for="name" className="block text-sm font-medium text-gray-50">
@@ -77,11 +90,16 @@ export default function Generic() {
             className="text-gray-900 mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-form-500 focus:border-form-500 sm:text-sm rounded-md"
             ref={register}
           >
-            <option value="say-hi" selected>
-              You just wanna say hi
+            <option value="project-pitch" selected>
+              You want to collaborate on a project
             </option>
-            <option value="services">You're interested in my services</option>
-            <option value="photo">You'd like to talk photography</option>
+            <option value="hire-me">You'd like to hire/commission me</option>
+            <option value="general-chat">
+              You'd like to chat about photography in general
+            </option>
+            <option value="specific-chat">
+              You'd like to chat about one of my series/projects
+            </option>
             <option value="other">Something else</option>
           </select>
         </div>
@@ -128,7 +146,7 @@ export default function Generic() {
           type="submit"
           className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-cta-600 hover:bg-cta-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cta-500 mr-auto ml-0"
         >
-          Let's do this
+          Send me a message
           <svg
             class="ml-3 -mr-1 h-5 w-5"
             xmlns="http://www.w3.org/2000/svg"
