@@ -29,10 +29,10 @@ export default function Generic() {
 
   return (
     <main className="max-w-3xl mx-auto">
-      <h1 className="font-serif font-bold text-5xl py-12">
+      <h1 className="py-12 font-serif text-5xl font-bold">
         Get in touch about photography
       </h1>
-      <div className="prose text-gray-200 pb-12">
+      <div className="pb-12 text-gray-200 prose">
         <p>
           I'm available for editorial, commercial, and documentary projects.
         </p>
@@ -54,7 +54,7 @@ export default function Generic() {
               placeholder="Your name"
               name="name"
               id="name"
-              className="text-gray-900 shadow-sm focus:ring-form-500 focus:border-form-500 block w-full sm:text-sm border-gray-300 rounded-md"
+              className="block w-full text-gray-900 border-gray-300 shadow-sm focus:ring-form-500 focus:border-form-500 sm:text-sm rounded-md"
               ref={register({ required: true, min: 2, maxLength: 80 })}
             />
           </div>
@@ -69,7 +69,7 @@ export default function Generic() {
               type="text"
               name="email"
               id="email"
-              className="text-gray-900 shadow-sm focus:ring-form-500 focus:border-form-500 block w-full sm:text-sm border-gray-300 rounded-md"
+              className="block w-full text-gray-900 border-gray-300 shadow-sm focus:ring-form-500 focus:border-form-500 sm:text-sm rounded-md"
               placeholder="you@example.com"
               aria-describedby="email-description"
               ref={register({ required: true, maxLength: 80 })}
@@ -87,7 +87,7 @@ export default function Generic() {
           <select
             id="reason"
             name="reason"
-            className="text-gray-900 mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-form-500 focus:border-form-500 sm:text-sm rounded-md"
+            className="block w-full py-2 pl-3 pr-10 mt-1 text-base text-gray-900 border-gray-300 focus:outline-none focus:ring-form-500 focus:border-form-500 sm:text-sm rounded-md"
             ref={register}
           >
             <option value="project-pitch" selected>
@@ -117,14 +117,14 @@ export default function Generic() {
               name="message"
               id="message"
               rows="3"
-              className="text-gray-900 w-full shadow-sm focus:ring-form-500 focus:border-form-500 block border-gray-300 rounded-md"
+              className="block w-full text-gray-900 border-gray-300 shadow-sm focus:ring-form-500 focus:border-form-500 rounded-md"
               aria-describedby="message"
               ref={register({ required: true, maxLength: 80 })}
             />
           </div>
         </div>
 
-        <div className="grid grid-flow-col justify-start items-center gap-2">
+        <div className="items-center justify-start grid grid-flow-col gap-2">
           <label
             for="checked"
             className="block text-sm font-medium text-gray-50"
@@ -137,18 +137,18 @@ export default function Generic() {
             id="checked"
             name="checked"
             ref={register({ required: true })}
-            className="order-first h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+            className="order-first w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
           />
         </div>
 
         <button
           onClick={notify}
           type="submit"
-          className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-cta-600 hover:bg-cta-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cta-500 mr-auto ml-0"
+          className="inline-flex items-center px-4 py-2 ml-0 mr-auto text-base font-medium text-white border border-transparent shadow-sm rounded-md bg-cta-600 hover:bg-cta-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cta-500"
         >
           Send me a message
           <svg
-            class="ml-3 -mr-1 h-5 w-5"
+            class="w-5 h-5 ml-3 -mr-1"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="none"

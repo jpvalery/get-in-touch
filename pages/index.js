@@ -3,8 +3,8 @@ import NextLink from "next/link";
 export default function Home() {
   return (
     <main>
-      <h1 className="font-serif font-bold text-5xl py-8">Get in touch</h1>
-      <div className="prose prose-xl text-gray-200 max-w-4xl pb-8">
+      <h1 className="py-8 font-serif text-5xl font-bold">Get in touch</h1>
+      <div className="max-w-4xl pb-8 text-gray-200 prose prose-xl">
         <p>
           I'm gonna be real. I can't pursue every opportunity that comes my way
           and have to be extremely picky.
@@ -29,10 +29,10 @@ export default function Home() {
         <p>Sounds good?</p>
       </div>
       <NextLink href="/generic">
-        <button className="inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-base font-medium rounded-md text-white bg-cta-600 hover:bg-cta-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cta-500 mx-auto">
+        <button className="inline-flex items-center px-4 py-2 mx-auto text-base font-medium text-white border border-transparent shadow-sm rounded-md bg-cta-600 hover:bg-cta-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cta-500">
           Let's do this
           <svg
-            class="ml-3 -mr-1 h-5 w-5"
+            class="w-5 h-5 ml-3 -mr-1"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             fill="none"
