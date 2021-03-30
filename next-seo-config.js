@@ -1,6 +1,6 @@
 const title = "Get in touch with Jp";
 const description = "Let's chat. But first, fill this form for me will ya?";
-const siteUrl = "https://contact.jpvalery.me"
+const siteUrl = "https://contact.jpvalery.me";
 
 const SEO = {
   title: title,
@@ -14,10 +14,10 @@ const SEO = {
     description: description,
     images: [
       {
-        url: 'https://contact.jpvalery.me/static/og-banner.jpg',
+        url: "https://contact.jpvalery.me/static/og-banner.jpg",
         width: 1920,
         height: 1280,
-        alt: 'Open Graph Image',
+        alt: "Open Graph Image",
       },
     ],
   },

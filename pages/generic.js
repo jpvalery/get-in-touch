@@ -11,6 +11,8 @@ const notify = () =>
     },
   });
 
+import { InboxInIcon } from "@heroicons/react/outline";
+
 export default function Generic() {
   const { register, handleSubmit, errors } = useForm();
 
@@ -41,7 +43,7 @@ export default function Generic() {
               placeholder="Your name"
               name="name"
               id="name"
-              className="block w-full text-gray-900 border-gray-300 shadow-sm focus:ring-form-500 focus:border-form-500 sm:text-sm rounded-md"
+              className="block w-full text-gray-900 border-gray-300 rounded-md shadow-sm focus:ring-form-500 focus:border-form-500 sm:text-sm"
               ref={register({ required: true, min: 2, maxLength: 80 })}
             />
           </div>
@@ -56,7 +58,7 @@ export default function Generic() {
               type="text"
               name="email"
               id="email"
-              className="block w-full text-gray-900 border-gray-300 shadow-sm focus:ring-form-500 focus:border-form-500 sm:text-sm rounded-md"
+              className="block w-full text-gray-900 border-gray-300 rounded-md shadow-sm focus:ring-form-500 focus:border-form-500 sm:text-sm"
               placeholder="you@example.com"
               aria-describedby="email-description"
               ref={register({ required: true, maxLength: 80 })}
@@ -74,7 +76,7 @@ export default function Generic() {
           <select
             id="reason"
             name="reason"
-            className="block w-full py-2 pl-3 pr-10 mt-1 text-base text-gray-900 border-gray-300 focus:outline-none focus:ring-form-500 focus:border-form-500 sm:text-sm rounded-md"
+            className="block w-full py-2 pl-3 pr-10 mt-1 text-base text-gray-900 border-gray-300 rounded-md focus:outline-none focus:ring-form-500 focus:border-form-500 sm:text-sm"
             ref={register}
           >
             <option value="say-hi" selected>
@@ -99,14 +101,14 @@ export default function Generic() {
               name="message"
               id="message"
               rows="3"
-              className="block w-full text-gray-900 border-gray-300 shadow-sm focus:ring-form-500 focus:border-form-500 rounded-md"
+              className="block w-full text-gray-900 border-gray-300 rounded-md shadow-sm focus:ring-form-500 focus:border-form-500"
               aria-describedby="message"
               ref={register({ required: true, maxLength: 80 })}
             />
           </div>
         </div>
 
-        <div className="items-center justify-start grid grid-flow-col gap-2">
+        <div className="grid items-center justify-start grid-flow-col gap-2">
           <label
             for="checked"
             className="block text-sm font-medium text-gray-50"
@@ -126,24 +128,10 @@ export default function Generic() {
         <button
           onClick={notify}
           type="submit"
-          className="inline-flex items-center px-4 py-2 ml-0 mr-auto text-base font-medium text-white border border-transparent shadow-sm rounded-md bg-cta-600 hover:bg-cta-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cta-500"
+          className="flex items-center justify-between px-4 py-2 ml-0 mr-auto text-base font-medium text-white border border-transparent rounded-md shadow-sm bg-cta-600 hover:bg-cta-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cta-500"
         >
           Let's do this
-          <svg
-            class="w-5 h-5 ml-3 -mr-1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M8 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2m-4-1v8m0 0l3-3m-3 3L9 8m-5 5h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293h3.172a1 1 0 00.707-.293l2.414-2.414a1 1 0 01.707-.293H20"
-            />
-          </svg>
+          <InboxInIcon className="w-5 h-5 ml-3 -mr-1" />
         </button>
         <Toaster
           toastOptions={{
