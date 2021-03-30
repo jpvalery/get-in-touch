@@ -31,7 +31,7 @@ export default function Home() {
         <p>Sounds good?</p>
       </div>
       <NextLink href="/generic">
-        <button className="flex items-center justify-between px-4 py-2 mx-auto text-base font-medium text-white border border-transparent rounded-md shadow-sm bg-cta-600 hover:bg-cta-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cta-500">
+        <button className="flex items-center justify-between px-4 py-2 mr-auto text-base font-medium text-white border border-transparent rounded-md shadow-sm bg-cta-600 hover:bg-cta-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cta-500">
           Let's do this
           <ArrowNarrowRightIcon className="w-5 h-5 ml-3 -mr-1" />
         </button>
