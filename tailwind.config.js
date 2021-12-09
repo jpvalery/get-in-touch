@@ -16,8 +16,5 @@ module.exports = {
       75: "75deg",
     },
   },
-  variants: {
-    extend: {},
-  },
   plugins: [require("@tailwindcss/typography"), require("@tailwindcss/forms")],
 };
