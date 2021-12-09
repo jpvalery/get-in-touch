@@ -34,7 +34,7 @@ export default function Generic() {
       <h1 className="py-12 font-serif text-5xl font-bold">Get in touch</h1>
       <form className="grid gap-10" onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <label for="name" className="block text-sm font-medium text-gray-50">
+          <label htmlFor="name" className="block text-sm font-medium text-gray-50">
             What's your name?
           </label>
           <div className="mt-1">
@@ -50,7 +50,7 @@ export default function Generic() {
         </div>
 
         <div>
-          <label for="email" className="block text-sm font-medium text-gray-50">
+          <label htmlFor="email" className="block text-sm font-medium text-gray-50">
             Where can I write back to you?
           </label>
           <div className="mt-1">
@@ -68,7 +68,7 @@ export default function Generic() {
 
         <div>
           <label
-            for="reason"
+            htmlFor="reason"
             className="block text-sm font-medium text-gray-50"
           >
             What can I help you with?
@@ -90,7 +90,7 @@ export default function Generic() {
 
         <div>
           <label
-            for="message"
+            htmlFor="message"
             className="block text-sm font-medium text-gray-50"
           >
             Can you add more details?
@@ -110,7 +110,7 @@ export default function Generic() {
 
         <div className="grid items-center justify-start grid-flow-col gap-2">
           <label
-            for="checked"
+            htmlFor="checked"
             className="block text-sm font-medium text-gray-50"
           >
             Have you proofread everything?
