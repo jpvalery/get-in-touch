@@ -45,7 +45,10 @@ export default function Generic() {
       </div>
       <form className="grid gap-10" onSubmit={handleSubmit(onSubmit)}>
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-50">
+          <label
+            htmlFor="name"
+            className="block text-sm font-medium text-gray-50"
+          >
             What's your name?
           </label>
           <div className="mt-1">
@@ -61,7 +64,10 @@ export default function Generic() {
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-50">
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-gray-50"
+          >
             Where can I write back to you?
           </label>
           <div className="mt-1">
