@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <main>
       <h1 className="py-8 font-serif text-5xl font-bold">Get in touch</h1>
-      <div className="max-w-4xl pb-8 prose prose-xl text-gray-200">
+      <div className="prose prose-xl max-w-4xl pb-8 text-gray-200">
         <p>
           I'm gonna be real. I can't pursue every opportunity that comes my way
           and have to be extremely picky.
@@ -31,9 +31,9 @@ export default function Home() {
         <p>Sounds good?</p>
       </div>
       <NextLink href="/generic">
-        <button className="flex items-center justify-between px-4 py-2 mr-auto text-base font-medium text-white border border-transparent rounded-md shadow-sm bg-cta-600 hover:bg-cta-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cta-500">
+        <button className="mr-auto flex items-center justify-between rounded-md border border-transparent bg-cta-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-cta-700 focus:outline-none focus:ring-2 focus:ring-cta-500 focus:ring-offset-2">
           Let's do this
-          <ArrowNarrowRightIcon className="w-5 h-5 ml-3 -mr-1" />
+          <ArrowNarrowRightIcon className="ml-3 -mr-1 h-5 w-5" />
         </button>
       </NextLink>
     </main>

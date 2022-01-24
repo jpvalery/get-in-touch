@@ -2,22 +2,22 @@ import { CheckCircleIcon } from "@heroicons/react/solid";
 
 export default function Success() {
   return (
-    <div className="w-full p-4 rounded-md bg-green-50">
+    <div className="w-full rounded-md bg-green-50 p-4">
       <div className="flex">
         <div className="flex-shrink-0">
-          <CheckCircleIcon className="w-5 h-5 text-green-400" />
+          <CheckCircleIcon className="h-5 w-5 text-green-400" />
         </div>
         <div className="ml-3">
           <p className="text-sm font-medium text-green-800">
             Successfully submitted!
           </p>
         </div>
-        <div className="pl-3 ml-auto">
+        <div className="ml-auto pl-3">
           <div className="-mx-1.5 -my-1.5">
-            <button className="inline-flex bg-green-50 rounded-md p-1.5 text-green-500 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-green-50 focus:ring-green-600">
+            <button className="inline-flex rounded-md bg-green-50 p-1.5 text-green-500 hover:bg-green-100 focus:outline-none focus:ring-2 focus:ring-green-600 focus:ring-offset-2 focus:ring-offset-green-50">
               <span className="sr-only">Dismiss</span>
               <svg
-                className="w-5 h-5"
+                className="h-5 w-5"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 20 20"
                 fill="currentColor"
