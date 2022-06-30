@@ -1,8 +1,7 @@
-import React from "react";
 import { useForm } from "react-hook-form";
 
-import Success from "../components/Success";
 import toast, { Toaster } from "react-hot-toast";
+import Success from "../components/Success";
 const notify = () =>
   toast(<Success />, {
     style: {
