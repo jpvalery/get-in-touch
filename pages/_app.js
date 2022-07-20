@@ -6,7 +6,7 @@ import { DefaultSeo } from "next-seo";
 
 import SEO from "../next-seo-config";
 
-import Footer from "../components/Footer";
+import { Footer, MainBody } from "@jpvalery/mistral";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -15,10 +15,10 @@ function MyApp({ Component, pageProps }) {
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
       <DefaultSeo {...SEO} />
-      <div className="mx-auto max-w-5xl px-6 pb-6">
+      <MainBody>
         <Component {...pageProps} />
-        <Footer />
-      </div>
+      </MainBody>
+      <Footer displaySocial socialSelection="Work" />
     </div>
   );
 }

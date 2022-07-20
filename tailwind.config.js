@@ -1,13 +1,13 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  content: ["./pages/**/*.js", "./components/**/*.js", "./elements/**/*.js"],
+  content: [
+    "./pages/**/*.js",
+    "./node_modules/@jpvalery/mistral/**/*.js",
+  ],
   theme: {
     extend: {
       colors: {
-        advisor: colors.emerald,
-        consultant: colors.violet,
-        cta: colors.blue,
         form: colors.blue,
       },
     },

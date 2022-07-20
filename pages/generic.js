@@ -1,16 +1,15 @@
 import { useForm } from "react-hook-form";
 
+import { Button, Post, ToastSuccess } from "@jpvalery/mistral";
+
 import toast, { Toaster } from "react-hot-toast";
-import Success from "../components/Success";
 const notify = () =>
-  toast(<Success />, {
+  toast(<ToastSuccess message="Successfully submitted!" />, {
     style: {
       border: "0px solid black",
       backgroundColor: "transparent",
     },
   });
-
-import { InboxInIcon } from "@heroicons/react/outline";
 
 export default function Generic() {
   const { register, handleSubmit, errors } = useForm();
@@ -29,9 +28,10 @@ export default function Generic() {
   };
 
   return (
-    <main className="mx-auto max-w-3xl">
-      <h1 className="py-12 font-serif text-5xl font-bold">Get in touch</h1>
-      <form className="grid gap-10" onSubmit={handleSubmit(onSubmit)}>
+    <>
+      <Post header="Get in touch">
+        
+        <form className="grid gap-10" onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label
             htmlFor="name"
@@ -130,20 +130,20 @@ export default function Generic() {
           />
         </div>
 
-        <button
+        <Button
+          icon="InboxInIcon"
+          label="Send message"
           onClick={notify}
           type="submit"
-          className="ml-0 mr-auto flex items-center justify-between rounded-md border border-transparent bg-cta-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-cta-700 focus:outline-none focus:ring-2 focus:ring-cta-500 focus:ring-offset-2"
-        >
-          Let's do this
-          <InboxInIcon className="ml-3 -mr-1 h-5 w-5" />
-        </button>
+        />
         <Toaster
           toastOptions={{
             className: "rounded-md bg-green-50 p-4",
           }}
         />
       </form>
-    </main>
+
+    </Post>
+    </>
   );
 }

@@ -1,9 +1,10 @@
 import { useForm } from "react-hook-form";
 
+import { Button, Post, ToastSuccess } from "@jpvalery/mistral";
+
 import toast, { Toaster } from "react-hot-toast";
-import Success from "../components/Success";
 const notify = () =>
-  toast(<Success />, {
+  toast(<ToastSuccess message="Successfully submitted!" />, {
     style: {
       border: "0px solid black",
       backgroundColor: "transparent",
@@ -27,153 +28,135 @@ export default function Generic() {
   };
 
   return (
-    <main className="mx-auto max-w-3xl">
-      <h1 className="py-12 font-serif text-5xl font-bold">
-        Get in touch about photography
-      </h1>
-      <div className="prose pb-12 text-gray-200">
-        <p>
-          I'm available for editorial, commercial, and documentary projects.
-        </p>
-        <p>
-          While I'm currently favoring more in-depth editorial and documentary
-          projects, I'm happy to discuss other projects if they match my vision
-          or move me.
-        </p>
-        <p>Please fill out the form below and let's get started. </p>
-      </div>
-      <form className="grid gap-10" onSubmit={handleSubmit(onSubmit)}>
-        <div>
-          <label
-            htmlFor="name"
-            className="block text-sm font-medium text-gray-50"
-          >
-            What's your name?
-          </label>
-          <div className="mt-1">
+    <>
+      <Post header="Get in touch about photography">
+        <div className="prose pb-12 text-gray-200">
+          <p>
+            I'm available for editorial, commercial, and documentary projects.
+          </p>
+          <p>
+            While I'm currently favoring more in-depth editorial and documentary
+            projects, I'm happy to discuss other projects if they match my
+            vision or move me.
+          </p>
+          <p>Please fill out the form below and let's get started. </p>
+        </div>
+        <form className="grid gap-10" onSubmit={handleSubmit(onSubmit)}>
+          <div>
+            <label
+              htmlFor="name"
+              className="block text-sm font-medium text-gray-50"
+            >
+              What's your name?
+            </label>
+            <div className="mt-1">
+              <input
+                type="text"
+                placeholder="Your name"
+                name="name"
+                id="name"
+                className="focus:border-form-500 focus:ring-form-500 block w-full rounded-md border-gray-300 text-gray-900 shadow-sm sm:text-sm"
+                ref={register({ required: true, min: 2, maxLength: 80 })}
+              />
+            </div>
+          </div>
+
+          <div>
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-gray-50"
+            >
+              Where can I write back to you?
+            </label>
+            <div className="mt-1">
+              <input
+                type="text"
+                name="email"
+                id="email"
+                className="focus:border-form-500 focus:ring-form-500 block w-full rounded-md border-gray-300 text-gray-900 shadow-sm sm:text-sm"
+                placeholder="you@example.com"
+                aria-describedby="email-description"
+                ref={register({ required: true, maxLength: 80 })}
+              />
+            </div>
+          </div>
+
+          <div>
+            <label
+              htmlFor="reason"
+              className="block text-sm font-medium text-gray-50"
+            >
+              What can I help you with?
+            </label>
+            <select
+              id="reason"
+              name="reason"
+              className="focus:border-form-500 focus:ring-form-500 mt-1 block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base text-gray-900 focus:outline-none sm:text-sm"
+              ref={register}
+            >
+              <option value="project-pitch" selected>
+                You want to collaborate on a project
+              </option>
+              <option value="hire-me">You'd like to hire/commission me</option>
+              <option value="general-chat">
+                You'd like to chat about photography in general
+              </option>
+              <option value="specific-chat">
+                You'd like to chat about one of my series/projects
+              </option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+
+          <div>
+            <label
+              htmlFor="message"
+              className="block text-sm font-medium text-gray-50"
+            >
+              Can you add more details?
+            </label>
+            <div className="mt-1">
+              <textarea
+                type="text"
+                name="message"
+                id="message"
+                rows="3"
+                className="focus:border-form-500 focus:ring-form-500 block w-full rounded-md border-gray-300 text-gray-900 shadow-sm"
+                aria-describedby="message"
+                ref={register({ required: true, maxLength: 80 })}
+              />
+            </div>
+          </div>
+
+          <div className="grid grid-flow-col items-center justify-start gap-2">
+            <label
+              htmlFor="checked"
+              className="block text-sm font-medium text-gray-50"
+            >
+              Have you proofread everything?
+            </label>
+
             <input
-              type="text"
-              placeholder="Your name"
-              name="name"
-              id="name"
-              className="block w-full rounded-md border-gray-300 text-gray-900 shadow-sm focus:border-form-500 focus:ring-form-500 sm:text-sm"
-              ref={register({ required: true, min: 2, maxLength: 80 })}
+              type="checkbox"
+              id="checked"
+              name="checked"
+              ref={register({ required: true })}
+              className="order-first h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
             />
           </div>
-        </div>
-
-        <div>
-          <label
-            htmlFor="email"
-            className="block text-sm font-medium text-gray-50"
-          >
-            Where can I write back to you?
-          </label>
-          <div className="mt-1">
-            <input
-              type="text"
-              name="email"
-              id="email"
-              className="block w-full rounded-md border-gray-300 text-gray-900 shadow-sm focus:border-form-500 focus:ring-form-500 sm:text-sm"
-              placeholder="you@example.com"
-              aria-describedby="email-description"
-              ref={register({ required: true, maxLength: 80 })}
-            />
-          </div>
-        </div>
-
-        <div>
-          <label
-            htmlFor="reason"
-            className="block text-sm font-medium text-gray-50"
-          >
-            What can I help you with?
-          </label>
-          <select
-            id="reason"
-            name="reason"
-            className="mt-1 block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base text-gray-900 focus:border-form-500 focus:outline-none focus:ring-form-500 sm:text-sm"
-            ref={register}
-          >
-            <option value="project-pitch" selected>
-              You want to collaborate on a project
-            </option>
-            <option value="hire-me">You'd like to hire/commission me</option>
-            <option value="general-chat">
-              You'd like to chat about photography in general
-            </option>
-            <option value="specific-chat">
-              You'd like to chat about one of my series/projects
-            </option>
-            <option value="other">Something else</option>
-          </select>
-        </div>
-
-        <div>
-          <label
-            htmlFor="message"
-            className="block text-sm font-medium text-gray-50"
-          >
-            Can you add more details?
-          </label>
-          <div className="mt-1">
-            <textarea
-              type="text"
-              name="message"
-              id="message"
-              rows="3"
-              className="block w-full rounded-md border-gray-300 text-gray-900 shadow-sm focus:border-form-500 focus:ring-form-500"
-              aria-describedby="message"
-              ref={register({ required: true, maxLength: 80 })}
-            />
-          </div>
-        </div>
-
-        <div className="grid grid-flow-col items-center justify-start gap-2">
-          <label
-            htmlFor="checked"
-            className="block text-sm font-medium text-gray-50"
-          >
-            Have you proofread everything?
-          </label>
-
-          <input
-            type="checkbox"
-            id="checked"
-            name="checked"
-            ref={register({ required: true })}
-            className="order-first h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+          <Button
+            icon="InboxInIcon"
+            label="Send message"
+            onClick={notify}
+            type="submit"
           />
-        </div>
-
-        <button
-          onClick={notify}
-          type="submit"
-          className="ml-0 mr-auto inline-flex items-center rounded-md border border-transparent bg-cta-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-cta-700 focus:outline-none focus:ring-2 focus:ring-cta-500 focus:ring-offset-2"
-        >
-          Send me a message
-          <svg
-            className="ml-3 -mr-1 h-5 w-5"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            aria-hidden="true"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M8 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2m-4-1v8m0 0l3-3m-3 3L9 8m-5 5h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293h3.172a1 1 0 00.707-.293l2.414-2.414a1 1 0 01.707-.293H20"
-            />
-          </svg>
-        </button>
-        <Toaster
-          toastOptions={{
-            className: "rounded-md bg-green-50 p-4",
-          }}
-        />
-      </form>
-    </main>
+          <Toaster
+            toastOptions={{
+              className: "rounded-md bg-green-50 p-4",
+            }}
+          />
+        </form>
+      </Post>
+    </>
   );
 }
